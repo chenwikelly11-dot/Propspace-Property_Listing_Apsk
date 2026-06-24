@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PropSpace | Worldwide Premium Properties & Portfolios</title>
+  <style>
+    /* Custom CSS Layouts & Design Tokens */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      background-color: var(--slate-50);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4rem;
+      background: var(--slate-50);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .brand-logo {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .brand-logo span {
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 1rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--slate-705);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--slate-700);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Currency Conversion Simulator style */
+    .simulator-box {
+      background-color: var(--slate-900);
+      color: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-top: 4rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .simulator-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .simulator-subtitle {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sim-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .sim-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sim-field label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+    }
+
+    .sim-field input, .sim-field select {
+      padding: 0.8rem 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .sim-field input:focus, .sim-field select:focus {
+      border-color: var(--primary);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .sim-result {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .sim-result-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      background-color: var(--slate-900);
+      color: #94a3b8;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 5rem;
+      border-t: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">Prop<span>Space</span></div>
+    <p class="tagline">Providing an elegant digital gateway for premier family mansions, high-rise apartments, and cozy executive studios globally.</p>
+    <a href="/" class="cta-button">Launch Main Platform</a>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">The PropSpace Blueprint</h2>
+    <p class="section-subtitle">A modern full-stack real estate platform designed to host high-quality properties in Cameroon and elite hubs worldwide.</p>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-icon">🇨🇲</div>
+        <h3 class="card-title">Cameroonian Premium Portfolio</h3>
+        <p class="card-desc">Showcase elite family mansions in Bastos (Yaoundé), newly constructed studio blocks in Akwa (Douala), and oceanfront penthouses near Limbe or Buea. Bridging the gap for local and diaspora investors.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3 class="card-title">African Business Gateways</h3>
+        <p class="card-desc">Hosting high-demand executive villa blocks and high-rises in core commercial centers such as Lekki Phase 1 (Lagos, Nigeria) and modern residential studios in Kilimani (Nairobi, Kenya).</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-icon">✈️</div>
+        <h3 class="card-title">Global Bluechip Hubs</h3>
+        <p class="card-desc">Unlock luxury listings across major international metropolises including Manhattan (New York, USA), Bayswater (London, UK), and the classic 7th Arrondissement of Paris (France).</p>
+      </div>
+    </div>
+
+    <!-- Embedded Interactive JavaScript Section -->
+    <div class="simulator-box">
+      <h3 class="simulator-title">Interactive Currency Estimator</h3>
+      <p class="simulator-subtitle">Convert real estate estimates instantly across central Cameroonian CFA, Nigerian Naira, Kenyan Shillings, US Dollars, and Euros.</p>
+
+      <div class="sim-form">
+        <div class="sim-field">
+          <label for="amount">Enter Listing Price (Base CFA Francs)</label>
+          <input type="number" id="amount" value="150000000">
+        </div>
+
+        <div class="sim-field">
+          <label for="currency">Convert To Target Currency</label>
+          <select id="currency">
+            <option value="USD">USD ($) - United States Dollar</option>
+            <option value="EUR">EUR (€) - Euro (Europe/France)</option>
+            <option value="GBP">GBP (£) - British Pound (UK)</option>
+            <option value="NGN">NGN (₦) - Nigerian Naira</option>
+            <option value="KES">KES (KSh) - Kenyan Shilling</option>
+          </select>
+        </div>
+
+        <div class="sim-result">
+          <label>Estimated Value</label>
+          <div class="sim-result-value" id="result-display">$240,000</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>PropSpace Worldwide Property Platform &copy; 2026 | Powered by React, Vite, and Node.js.</p>
+    <p style="margin-top: 0.5rem;"><a href="/">Return to Main Workspace</a></p>
+  </footer>
+
+  <script>
+    // Embedded client-side Vanilla JavaScript
+    const amountInput = document.getElementById('amount');
+    const currencySelect = document.getElementById('currency');
+    const resultDisplay = document.getElementById('result-display');
+
+    // Baseline conversions for 1 CFA Franc (XAF)
+    const rates = {
+      USD: 0.0016,
+      EUR: 0.0015,
+      GBP: 0.0013,
+      NGN: 2.45,
+      KES: 0.21
+    };
+
+    const symbols = {
+      USD: '$',
+      EUR: '€',
+      GBP: '£',
+      NGN: '₦',
+      KES: 'KSh'
+    };
+
+    function recalculate() {
+      const amount = parseFloat(amountInput.value) || 0;
+      const target = currencySelect.value;
+      const rate = rates[target] || 0;
+      const symbol = symbols[target] || '$';
+
+      const converted = amount * rate;
+      resultDisplay.textContent = symbol + Math.round(converted).toLocaleString();
+    }
+
+    amountInput.addEventListener('input', recalculate);
+    currencySelect.addEventListener('change', recalculate);
+
+    // Run first calculation on load
+    recalculate();
+  </script>
+</body>
+</html>
