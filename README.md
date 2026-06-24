@@ -4,30 +4,30 @@ PropSpace is a modern, full-stack, real-time property listing application that a
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
-- **🔐 Secure User Authentication**
+- ** Secure User Authentication**
   - Instant login, registration, and logout flows with client/server credential checking.
   - User-specific dashboard filters ensuring data isolation so users only modify their own listed properties.
 
-- **🔍 Advanced Search & Real-Time Filtering**
+- ** Advanced Search & Real-Time Filtering**
   - Find properties instantly using interactive search terms for locations, names, or descriptions.
   - Fine-grained multi-filter controls including property type (sale/rent), pricing ranges, bedroom count, and key amenities (e.g., parking, pool, gym, pet-friendliness).
 
-- **📊 Comprehensive Property Management Dashboard**
+- ** Comprehensive Property Management Dashboard**
   - Personal space for listing owners to track their current active offerings.
   - Interactive tools to add new properties, edit existing listings, and delete deprecated ones with instantaneous client updates.
 
-- **🧮 Interactive Financial Calculator**
+- ** Interactive Financial Calculator**
   - Built-in mortgage and payment calculator that helps buyers estimate monthly costs based on interest rates, loan terms, and down payments.
 
-- **💾 Full-Stack Architecture with Persistence**
+- ** Full-Stack Architecture with Persistence**
   - An Express-based backend server handles API proxy requests and handles local JSON persistence.
   - React (Vite) client with tailored Tailwind CSS design, smooth layout transitions, and high-contrast typography.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Frontend:** React, TypeScript, Tailwind CSS, Lucide React (Icons), Motion (Animations)
 - **Backend:** Express, TypeScript, Local JSON database adapter
@@ -35,7 +35,7 @@ PropSpace is a modern, full-stack, real-time property listing application that a
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ npm run dev
 ```
 
 The application will run locally and be accessible at:
-👉 **`http://localhost:3000`**
+ http://localhost:3000
 
 ### 4. Production Build & Execution
 
@@ -79,7 +79,7 @@ npm run start
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 ├── database_store.json     # Local JSON state persistent file
@@ -110,6 +110,6 @@ npm run start
 
 ---
 
-## 📄 License
+##  License
 
 This project is open-source and available under the MIT License.
